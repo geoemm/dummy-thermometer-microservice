@@ -1,0 +1,16 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_URL}
+    topic:
+      json: ${KAFKA_TOPIC}
+    consumer:
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: 'com.gemmano.kw.dtos'
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
