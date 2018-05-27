@@ -4,6 +4,7 @@ spring:
     topic:
       json: ${KAFKA_TOPIC}
     consumer:
+      group-id: ${GROUP_ID}
       auto-offset-reset: earliest
       enable-auto-commit: false
       properties:
