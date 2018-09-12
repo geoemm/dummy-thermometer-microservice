@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import com.gemmano.dtm.entities.DeviceData;
 import com.gemmano.dtm.repositories.DeviceDataRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class Consumer {
 
@@ -19,7 +22,7 @@ public class Consumer {
 	@KafkaListener(topics = "${spring.kafka.topic.json}")
 	public void receive(@Payload DeviceData data,
 						@Headers MessageHeaders headers) {
-
+		log.info("{}",data);
 		deviceDataRepository.save(data);
 	}
 }

@@ -1,0 +1,6 @@
+---
+applications:
+- name: dummy-thermometer-microservice
+  memory: 768M
+  instances: 1
+  path: target\dummy-thermometer-microservice-1.0.0.jar
