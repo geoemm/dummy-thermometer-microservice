@@ -1,7 +1,11 @@
 package com.gemmano.dtm.entities;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -13,5 +17,7 @@ public class DeviceData {
 	private String id;
 	private String deviceName;
 	private String data;
-	private String timestamp;
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+	private Date timestamp;
 }
