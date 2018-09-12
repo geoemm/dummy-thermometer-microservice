@@ -16,7 +16,9 @@ public class DeviceData {
 	@Id
 	private String id;
 	private String deviceName;
-	private String data;
+	private String temperature;
+	private String humidity;
+	private String light;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	private Date timestamp;
