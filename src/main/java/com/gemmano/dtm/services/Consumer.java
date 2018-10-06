@@ -22,7 +22,8 @@ public class Consumer {
 	@KafkaListener(topics = "${spring.kafka.topic.json}")
 	public void receive(@Payload DeviceData data,
 						@Headers MessageHeaders headers) {
-		log.info("{}",data);
+		
+		log.info("Hey {}",data);
 		deviceDataRepository.save(data);
 	}
 }
